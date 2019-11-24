@@ -54,3 +54,15 @@ start_x=0
 # gpu_mem=128 will reserve 128Mb for the gpu
 gpu_mem=16
 ```
+
+## Running a minecraft server
+
+See https://pimylifeup.com/raspberry-pi-minecraft-server/.
+
+```
+wget https://hub.spigotmc.org/jenkins/job/BuildTools/lastSuccessfulBuild/artifact/target/BuildTools.jar
+```
+
+```
+java -Xmx750M -jar BuildTools.jar --rev 1.14.4
+```
