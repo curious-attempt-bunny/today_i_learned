@@ -26,3 +26,28 @@ ssh-add -l
 you have to run
 ssh-add ~/.ssh/yourkey.rsa
 ```
+
+# Raspberry pi
+
+## Freeing up memory
+
+```
+free -h
+```
+
+```
+cat /proc/meminfo
+```
+
+```
+tail /boot/config.txt
+```
+
+```
+# NOOBS Auto-generated Settings:
+hdmi_force_hotplug=1
+# start_x=1 will reserve 128Mb for the camera
+start_x=0
+# gpu_mem=128 will reserve 128Mb for the gpu
+gpu_mem=16
+```
