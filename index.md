@@ -1,3 +1,6 @@
+<img src="https://i.pinimg.com/736x/9e/b2/c2/9eb2c214b911f382ebc7825768226285--gary-larson-the-far-side.jpg" alt="drawing" width="100"/> 
+What you read here are minimalist snippets to solve repeated tasks. Enjoy! (And yes, you can submit PRs)
+
 # Github
 
 ## Pushing code to mutliple github accounts
