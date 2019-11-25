@@ -101,3 +101,4 @@ sudo systemctl status minecraftserver.service
 
 * [penetration-testing-tools-cheat-sheet](https://highon.coffee/blog/penetration-testing-tools-cheat-sheet/)
 * [vulnhub](https://www.vulnhub.com/)
+* [hack the box](https://www.hackthebox.eu)
