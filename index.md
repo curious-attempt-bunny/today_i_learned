@@ -65,3 +65,9 @@ wget https://hub.spigotmc.org/jenkins/job/BuildTools/lastSuccessfulBuild/artifac
 ```
 java -Xmx750M -jar BuildTools.jar --rev 1.14.4
 ```
+
+...
+
+```
+sudo systemctl status minecraftserver.service
+```
