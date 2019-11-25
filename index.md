@@ -44,6 +44,18 @@ sudo dd bs=1048576 if=path_to.img of=/dev/disk2 &
 sudo kill -INFO $(pgrep ^dd)
 ```
 
+## Locate your Pi
+
+```
+sudo arp-scan -l | grep "Raspberry Pi Foundation" | grep -v DUP
+```
+
+...with sshd setup
+
+```
+sudo arp-scan -l | grep "Raspberry Pi Foundation" | grep -v DUP | cut -f1 | xargs nmap -P 22
+```
+
 ## Freeing up memory
 
 ```
@@ -89,4 +101,3 @@ sudo systemctl status minecraftserver.service
 
 * [penetration-testing-tools-cheat-sheet](https://highon.coffee/blog/penetration-testing-tools-cheat-sheet/)
 * [vulnhub](https://www.vulnhub.com/)
-* `sudo arp-scan -l | grep "Raspberry Pi Foundation" | grep -v DUP | cut -f1 | xargs nmap -P 22`
