@@ -69,3 +69,10 @@ java -Xmx750M -jar BuildTools.jar --rev 1.14.4
 ```
 sudo systemctl status minecraftserver.service
 ```
+
+# Kali
+
+## Helpful links
+
+* [penetration-testing-tools-cheat-sheet](https://highon.coffee/blog/penetration-testing-tools-cheat-sheet/)
+* [vulnhub](https://www.vulnhub.com/)
