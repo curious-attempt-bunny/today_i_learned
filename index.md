@@ -31,7 +31,7 @@ ssh-add ~/.ssh/yourkey.rsa
 
 # Raspberry pi
 
-## Prepare an SD image
+## Preparing an SD image
 
 ```
 diskutil list
