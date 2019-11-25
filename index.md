@@ -89,3 +89,4 @@ sudo systemctl status minecraftserver.service
 
 * [penetration-testing-tools-cheat-sheet](https://highon.coffee/blog/penetration-testing-tools-cheat-sheet/)
 * [vulnhub](https://www.vulnhub.com/)
+* `sudo arp-scan -l | grep "Raspberry Pi Foundation" | grep -v DUP | cut -f1 | xargs nmap -P 22`
