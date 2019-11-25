@@ -41,11 +41,9 @@ free -h
 cat /proc/meminfo
 ```
 
+`/boot/config.txt`:
 ```
-tail /boot/config.txt
-```
-
-```
+...
 # NOOBS Auto-generated Settings:
 hdmi_force_hotplug=1
 # start_x=1 will reserve 128Mb for the camera
