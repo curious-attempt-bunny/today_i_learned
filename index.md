@@ -31,6 +31,19 @@ ssh-add ~/.ssh/yourkey.rsa
 
 # Raspberry pi
 
+## Prepare an SD image
+
+```
+diskutil list
+```
+
+```
+diskutil unmountDisk /dev/disk2
+sudo dd bs=1048576 if=path_to.img of=/dev/disk2 &
+...
+sudo kill -INFO $(pgrep ^dd)
+```
+
 ## Freeing up memory
 
 ```
