@@ -123,4 +123,4 @@ sudo systemctl status minecraftserver.service
 
 ## No ipv4 address
 
-Having seen an ipv6 address but not ipv4. Try attaching to "NAT" for your VirtualBox network device instead of "Bridged Adapter".
+Having seen an ipv6 address but no ipv4 address; Try attaching to "NAT" for your VirtualBox network device instead of "Bridged Adapter".
