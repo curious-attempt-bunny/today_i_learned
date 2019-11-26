@@ -56,6 +56,22 @@ sudo arp-scan -l | grep "Raspberry Pi Foundation" | grep -v DUP
 sudo arp-scan -l | grep "Raspberry Pi Foundation" | grep -v DUP | cut -f1 | xargs nmap -P 22
 ```
 
+## Join WiFi from the commandline
+
+`/etc/wpa_supplicant.conf`:
+```
+{
+  network="<ssid>"
+  psk="<password>"
+}
+```
+
+```
+killall wpa_supplicant
+wpa_supplicant -B -iwlan0 -c/etc/wpa_supplicant.conf
+dhclient wlan0
+```
+
 ## Freeing up memory
 
 ```
