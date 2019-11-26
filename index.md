@@ -118,3 +118,9 @@ sudo systemctl status minecraftserver.service
 * [penetration-testing-tools-cheat-sheet](https://highon.coffee/blog/penetration-testing-tools-cheat-sheet/)
 * [vulnhub](https://www.vulnhub.com/)
 * [hack the box](https://www.hackthebox.eu)
+
+# VirtualBox
+
+## No ipv4 address
+
+Having seen an ipv6 address but no ipv4. Try attaching to "NAT" for your VirtualBox network device instead of "Bridged Adapter".
