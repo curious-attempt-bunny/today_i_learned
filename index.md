@@ -111,13 +111,40 @@ java -Xmx750M -jar BuildTools.jar --rev 1.14.4
 sudo systemctl status minecraftserver.service
 ```
 
-# Kali
+# Kali / Pentesting
+
+(It shouldn't need to be said, but: only use these on above-board scenarios, e.g. hackthebox.eu)
 
 ## Helpful links
 
 * [penetration-testing-tools-cheat-sheet](https://highon.coffee/blog/penetration-testing-tools-cheat-sheet/)
 * [vulnhub](https://www.vulnhub.com/)
 * [hack the box](https://www.hackthebox.eu)
+* [offensive guide - first step](https://0xsp.com/offensive/offensive-guide)
+* [offensive guide - second step](https://0xsp.com/offensive/offensive-guide-second-step)
+
+## What can a user do with sudo?
+
+`sudo -l`
+
+## What encryption is used on a file?
+
+See https://www.mogozobo.com/?p=1528.
+
+```
+    #/bin/bash
+
+    CIPHER_LIST=openssl list-cipher-commands
+
+    for cipher in $CIPHER_LIST; do
+    openssl end -d -${cipher} -in $1 -pass pass:$2 > /dev/null 2>&1
+    if [[ $? -eq 0 ]]; then
+    echo "Cipher used was $cipher. unencrypting $1"
+    openssl enc -d -${cipher} -in $1 -out $3 -pass pass:$2
+    exit
+    fi
+    done
+```
 
 # VirtualBox
 
