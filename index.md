@@ -130,7 +130,7 @@ sed -i 's/"exited_cleanly":false/"exited_cleanly":true/; s/"exit_type":"[^"]\+"/
 
 while true:
 do
-  chromium-browser  --noerrdialogs --disable-infobars --kiosk $KIOSK_URL --check-for-update-interval=31536000
+  chromium-browser --noerrdialogs --disable-infobars --kiosk $KIOSK_URL --check-for-update-interval=31536000
 done
 ```
 
@@ -166,7 +166,7 @@ xseq dpms force off
 quiet.sh:
 ```
 export DISPLAY=:0
-xseq dpms force off
+xset dpms force off
 pkill -2 chromium-browse
 ```
 
