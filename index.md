@@ -111,6 +111,51 @@ java -Xmx750M -jar BuildTools.jar --rev 1.14.4
 sudo systemctl status minecraftserver.service
 ```
 
+## Setting up a touchscreen-kiosk
+
+https://desertbot.io/blog/raspberry-pi-touchscreen-kiosk-setup
+
+```
+sudo raspi-config # find Console Autologin
+sudo apt-get install --no-install-recommends xserver-xorg x11-xserver-utils xinit openbox
+sudo apt-get install chromium-browser
+sudo nano /etc/xdg/openbox/autostart
+```
+
+Add to `/etc/xdg/openbox/autostart`:
+```
+# Remove exit errors from the config files that could trigger a warning
+sed -i 's/"exited_cleanly":false/"exited_cleanly":true/' ~/.config/chromium/'Local State' 
+sed -i 's/"exited_cleanly":false/"exited_cleanly":true/; s/"exit_type":"[^"]\+"/"exit_type":"Normal"/' ~/.config/chromium/Default/Preferences
+
+while true:
+do
+  chromium-browser  --noerrdialogs --disable-infobars --kiosk $KIOSK_URL --check-for-update-interval=31536000
+done
+```
+
+```
+sudo nano /etc/xdg/openbox/environment
+```
+
+Add to `/etc/xdg/openbox/environment`:
+```
+export KIOSK_URL=https://spotify.com # for example
+```
+
+## Force killing chromium-browser
+
+```
+pkill -2 chromium-browse # yes, without the trailing "r"
+```
+
+## Forcing touchscreen to turn off (it will still wake when you touch it)
+
+```
+export DISPLAY=:0
+xseq dpms force off
+```
+
 # Kali / Pentesting
 
 (It shouldn't need to be said, but: only use these on above-board scenarios, e.g. hackthebox.eu)
