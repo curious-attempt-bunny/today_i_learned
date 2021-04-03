@@ -128,7 +128,7 @@ Add to `/etc/xdg/openbox/autostart`:
 sed -i 's/"exited_cleanly":false/"exited_cleanly":true/' ~/.config/chromium/'Local State' 
 sed -i 's/"exited_cleanly":false/"exited_cleanly":true/; s/"exit_type":"[^"]\+"/"exit_type":"Normal"/' ~/.config/chromium/Default/Preferences
 
-while true:
+while true
 do
   chromium-browser --noerrdialogs --disable-infobars --kiosk $KIOSK_URL --check-for-update-interval=31536000
 done
