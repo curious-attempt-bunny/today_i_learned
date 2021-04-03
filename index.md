@@ -156,6 +156,25 @@ export DISPLAY=:0
 xseq dpms force off
 ```
 
+## Enabling Spotify DRM media playback (maybe Netflix too)
+
+NOTE: This means untrusted binaries! Not secure!
+These steps work for Raspberry Pi4 on Raspbian Buster. 
+
+https://blog.vpetkov.net/2020/03/30/raspberry-pi-netflix-one-line-easy-install-along-with-hulu-amazon-prime-disney-plus-hbo-spotify-pandora-and-many-others/
+
+```
+sudo apt update
+# sudo apt full-upgrade # maybe?
+sudo apt install libwidevinecdm0
+wget -q --no-check-certificate https://pi.vpetkov.net/libwidevinecdm.so
+wget -q --no-check-certificate https://pi.vpetkov.net/manifest.json
+chmod 755 libwidevinecdm.so && chmod 644 manifest.json 
+mkdir -p ${HOME}/.config/chromium-browser/WidevineCdm
+echo '{"Path":"/opt/WidevineCdm"}' > ${HOME}/.config/chromium-browser/WidevineCdm/latest-component-updated-widevine-cdm
+sudo mkdir -p /opt/WidevineCdm/_platform_specific/linux_arm && sudo mv -f manifest.json /opt/WidevineCdm && sudo mv -f libwidevinecdm.so /opt/WidevineCdm/_platform_specific/linux_arm 
+```
+
 # Kali / Pentesting
 
 (It shouldn't need to be said, but: only use these on above-board scenarios, e.g. hackthebox.eu)
