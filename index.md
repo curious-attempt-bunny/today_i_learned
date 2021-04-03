@@ -156,6 +156,20 @@ export DISPLAY=:0
 xseq dpms force off
 ```
 
+## Crontab for supressing kiosk usage at night
+
+```
+30,40,50 21 * * * /home/pi/quiet.sh
+*/10 0-6,22-23 * * * /home/pi/quiet.sh
+```
+
+quiet.sh:
+```
+export DISPLAY=:0
+xseq dpms force off
+pkill -2 chromium-browse
+```
+
 ## Enabling Spotify DRM media playback (maybe Netflix too)
 
 NOTE: This means untrusted binaries! Not secure!
